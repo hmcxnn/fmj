@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>选择ROM</title>
+    <link rel="stylesheet" type="text/css" href="views/baye.css" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                // 对游戏名称进行URL编码，处理中文字符
+                var gameName = encodeURIComponent($(this).text().trim());
+                // 检查游戏目录是否存在
+                fetch(`/games/${gameName}/`)
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = `games/${gameName}/index.html`;
+                        } else {
+                            console.error('游戏目录不存在:', gameName);
+                            alert('游戏加载失败，请稍后再试');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('检查游戏目录时出错:', error);
+                        alert('游戏加载出错，请检查控制台日志');
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="list">
+        <button class="btn menu" type="button">伏魔记</button>
+        <button class="btn menu" type="button">金庸群侠传</button>
+        <button class="btn menu" type="button">赤壁之战之乱世枭雄</button>
+        <button class="btn menu" type="button">赤壁之战之谁与争锋</button>
+        <button class="btn menu" type="button">侠客行</button>
+</div>
+<div>交流QQ群: 526266208 (里面找到更多游戏哦，或者你想加入开发也可以加群)</div>
+</body>
+</html>

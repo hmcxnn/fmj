@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伏魔记</title>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/encoding-indexes.js"></script>
+    <script src="../../js/encoding.js"></script>
+    <script src="../../js/sys.js"></script>
+    <script src="../../js/kotlin.js"></script>
+    <script src="../../js/font.js"></script>
+    <script src="rom.js"></script>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+        .element.lcd {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .fill {
+            background-color: green;
+            width: 320px;
+            height: 192px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="element lcd">
+        <canvas class="fill" id="lcd" width="160" height="96"></canvas>
+    </div>
+    <div style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 5px; font-family: Arial, sans-serif; max-width: 320px;">
+        <h3 style="margin-top: 0; color: #333;">游戏操作说明</h3>
+        <div style="margin-bottom: 10px;">
+            <strong>方向控制：</strong>
+            <div style="margin: 5px 0 10px 15px;">
+                <div>↑ 上方向键 - 向上移动</div>
+                <div>↓ 下方向键 - 向下移动</div>
+                <div>← 左方向键 - 向左移动</div>
+                <div>→ 右方向键 - 向右移动</div>
+            </div>
+        </div>
+        <div style="margin-bottom: 5px;">
+            <strong>功能键：</strong>
+            <div style="margin: 5px 0 0 15px;">
+                <div>空格键 (Space) - 返回/取消 (Esc)</div>
+                <div>回车键 (Enter) - 确认/选择</div>
+                <div>[ 键 - 上翻页 (PageUp)</div>
+                <div>] 键 - 下翻页 (PageDown)</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/fmj.core.js"></script>
+</html>
