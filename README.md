@@ -1,8 +1,7 @@
 # 伏魔记
 
-步步高电子词典经典游戏 - 伏魔记的H5移植版本
-
-[![Docker Image CI](https://github.com/你的GitHub用户名/fm-master/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/你的GitHub用户名/fm-master/actions/workflows/docker-publish.yml)
+步步高电子词典经典游戏 - 伏魔记的H5移植版本进行了docker
+原项目地址：https://gitee.com/bgwp/fm
 
 ## 项目介绍
 
@@ -13,7 +12,7 @@
 ### 使用Docker运行
 
 ```bash
-docker run -d -p 8080:80 ghcr.io/你的GitHub用户名/fm-master:latest
+docker run -d -p 8080:80 ghcr.io/hmcxnn/fm-master:latest
 ```
 
 然后在浏览器中访问：`http://localhost:8080`
@@ -26,7 +25,7 @@ docker run -d -p 8080:80 ghcr.io/你的GitHub用户名/fm-master:latest
 version: '3'
 services:
   fmj:
-    image: ghcr.io/你的GitHub用户名/fm-master:latest
+    image: ghcr.io/hmcxnn/fm-master:latest
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -37,26 +36,6 @@ services:
 ```bash
 docker-compose up -d
 ```
-
-## 开发
-
-### 本地开发
-
-1. 克隆仓库
-2. 使用任意静态文件服务器（如 `python -m http.server`）在项目根目录启动服务
-3. 访问 `http://localhost:8000`
-
-### 构建Docker镜像
-
-```bash
-docker build -t fmj .
-docker run -d -p 8080:80 fmj
-```
-
-## 部署
-
-推送到 `master` 分支会自动构建并发布Docker镜像到 GitHub Container Registry。
-
 ## 相关项目
 
 - 引擎源码地址：[http://gitee.com/bgwp/fmj.kt](http://gitee.com/bgwp/fmj.kt)
